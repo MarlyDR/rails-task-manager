@@ -1,0 +1,21 @@
+<ul>
+    <div class="title">
+      <li><%= @task.title%></li>
+    </div>
+    <div class="details">
+      <li><%= @task.details%></li>
+    </div>
+    <div class="completed">
+      <li>
+        <% if @task.completed == true%>
+        <p><%= "Done!" %></p>
+        <% else%>
+        <p><%= "Need to be done" %></p>
+        <% end%>
+      </li>
+    </div>
+    <button class="btn btn-light">
+      <%= link_to "delete", task_path(@task),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <i class="fa-regular fa-trash-can"></i>
+    </button>
+</ul>
